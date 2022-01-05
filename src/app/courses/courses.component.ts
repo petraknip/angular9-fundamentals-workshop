@@ -10,18 +10,18 @@ export class CoursesComponent implements OnInit {
   // STEP 01: Display courses using ngFor
   // STEP 02: Add event handler to select course
   // STEP 03: Display raw json of selected course
-
+  selectedCourse = null;
   courses = [
     {
       id: 1,
-      title: 'Angular 9 Fundamentals',
+      title: 'Angular Fundamentals',
       description: 'Learn the fundamentals of Angular 9',
       percentComplete: 26,
       favorite: true
     },
     {
       id: 2,
-      title: 'JavaScript The Really REALLY HARD PARTS',
+      title: 'JavaScript',
       description: 'Worship Will Sentance',
       percentComplete: 50,
       favorite: true
@@ -31,6 +31,14 @@ export class CoursesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectCourse(course) {
+      this.selectedCourse = course;
+  }
+
+  deleteCourse (courseId) {
+      this.selectedCourse
   }
 
 }
