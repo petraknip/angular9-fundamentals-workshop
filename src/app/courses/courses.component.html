@@ -46,6 +46,12 @@
                     type="text" name="description" 
                     [(ngModel)]="selectedCourse.description">
                 </mat-form-field>
+                <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                <label id="example-radio-group-label">Favorite</label>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+                </mat-radio-group>
 
 
             </mat-card-content>
