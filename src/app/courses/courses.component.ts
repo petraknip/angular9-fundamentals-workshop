@@ -6,12 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-  // CHALLENGE
-  // STEP 01: Display courses using ngFor
-  // STEP 02: Add event handler to select course
-  // STEP 03: Display raw json of selected course
-  selectedCourse = null;
 
+  selectedCourse = null;
   courses = [
     {
       id: 1,
@@ -32,6 +28,21 @@ export class CoursesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.resetSelectedCourse();
+  }
+
+// hieronder een leeg object om de situatie op te vangen dat er nog geen courses geselecteerd zijn. Hierboven roepen we dan deze functie bij het Initializen van dit component.
+  resetSelectedCourse() {
+
+      const emptyCourse = {
+        id: null,
+        title: '',
+        description: '',
+        percentComplete: 0,
+        favorite: false
+      }
+
+      this.selectedCourse = emptyCourse;
   }
 
   selectCourse(course) {
@@ -40,5 +51,13 @@ export class CoursesComponent implements OnInit {
 
   deleteCourse(courseId) {
     console.log('COURSE DELETED!', courseId);
+  }
+
+  saveCourse() {
+      console.log("Course is saved");
+  }
+
+  cancel() {
+      this.resetSelectedCourse();
   }
 }
